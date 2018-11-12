@@ -2,10 +2,10 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once("functions.php");
-require_once("item.class.php");
-require_once("individuo.class.php");
-require_once("ag.class.php");
+require_once("functions/functions.php");
+require_once("classes/item.class.php");
+require_once("classes/individuo.class.php");
+require_once("classes/ag.class.php");
 
 $lista_itens = array();
 
