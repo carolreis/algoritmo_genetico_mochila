@@ -41,40 +41,9 @@ echo "\ntaxa_mutacao: ".$taxa_mutacao;
 echo "\nQuantidade Gerações: ".$numero_geracoes;
 
 $ag = new AlgoritmoGenetico($tamanho_populacao);
-$ag->inicializa_populacao($espacos, $valores, $limite);
 
-/* Avaliação e debbug */
-foreach ($ag->populacao as $individuo) {
-	$individuo->avaliacao();
-}
-
-$ag->ordena_populacao();
-$ag->define_melhor_solucao($ag->populacao[0]); 
-
-$soma = $ag->soma_avaliacoes();
-
-$nova_populacao = array();
-
-for ($i=0; $i < ($tamanho_populacao / 2); $i++) {
-	$pai1 = $ag->seleciona_pai($soma);
-	$pai2 = $ag->seleciona_pai($soma);
-	
-	$filhos = $ag->populacao[$pai1]->crossover($ag->populacao[$pai2]);
-
-	$nova_populacao[] = $filhos[0]->mutacao($taxa_mutacao);
-	$nova_populacao[] = $filhos[1]->mutacao($taxa_mutacao);
-}
-
-$ag->populacao = $nova_populacao;
-
-foreach ($ag->populacao as $individuo) {
-	$individuo->avaliacao();
-}
-
-$ag->ordena_populacao();
-$ag->define_melhor_solucao($ag->populacao[0]);
-$ag->soma_avaliacoes();
+$resultado = $ag->resolver($taxa_mutacao, $numero_geracoes, $espacos, $valores, $limite);
 
 http_response_code(200);
 echo "\nCromossomo: ";
-echo json_encode($ag->populacao[0]->cromossomo);
+echo json_encode($resultado);

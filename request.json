@@ -1,0 +1,7 @@
+{
+    "limite_espaco" : 7000,
+    "tamanho_populacao" : 20,
+    "taxa_mutacao" : 0.01,
+    "quantidade_geracoes" : 100
+    
+}
