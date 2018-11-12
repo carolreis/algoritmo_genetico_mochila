@@ -4,12 +4,10 @@ function random() {
 }
 	
 function quick_sort($arr) {
-	
 	$length = count($arr);
 	if ($length <= 1) {
 		return $arr;
 	} else {
-		
 		$pivot = $arr[0];
 		$left = $right = array();
 		for ($i = 1; $i < count($arr); $i++) {
@@ -19,16 +17,6 @@ function quick_sort($arr) {
 				$right[] = $arr[$i];
 			}
 		}
-
-		// echo "<br><br><br>";
-		// echo "<br> <b> ARRAY </b> : ";
-		// print_r($arr);
-		// echo "<br> <b> PIVOT </b> : ".$pivot;
-		// echo "<br> left: ";
-		// print_r($left);
-		// echo "<br> right: ";
-		// print_r($right);
-
 		return array_merge(quick_sort($left), array($pivot), quick_sort($right));
 	}
 }

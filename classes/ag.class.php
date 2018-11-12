@@ -39,10 +39,7 @@ class AlgoritmoGenetico {
 	}
 
 	function define_melhor_solucao($individuo) {
-		if ($individuo->nota_avaliacao 
-			> 
-			$this->melhor_solucao->nota_avaliacao
-		) {
+		if ($individuo->nota_avaliacao >  $this->melhor_solucao->nota_avaliacao) {
 			$this->melhor_solucao = $individuo;
 		}
 	}

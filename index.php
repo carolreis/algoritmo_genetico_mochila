@@ -34,7 +34,7 @@ $tamanho_populacao = isset($data->tamanho_populacao) ? $data->tamanho_populacao 
 $taxa_mutacao = isset($data->taxa_mutacao) ? $data->taxa_mutacao : 0.01;
 $numero_geracoes = isset($data->quantidade_geracoes) ? $data->quantidade_geracoes : 100;
 
-/* Debugging porpouse */
+/* Debugging purpose */
 echo "\nLimite: ".$limite;
 echo "\nTamanho população: ".$tamanho_populacao;
 echo "\ntaxa_mutacao: ".$taxa_mutacao;
