@@ -1,7 +1,13 @@
 {
-    "limite_espaco" : 7000,
     "tamanho_populacao" : 20,
+    "quantidade_geracoes" : 100,
+    "quantidade_pais" : 2,
+    "numero_individuos" : 2;
     "taxa_mutacao" : 0.01,
-    "quantidade_geracoes" : 100
-    
+    "bits_mutacao" : 5,
+    "peso_maximo" : 7000,
+    "peso_maximo_obj" : 7000,
+    "peso_minimo_obj" : 50,
+    "valor_maximo_obj" : 7000,
+    "valor_min_obj" : 50
 }
