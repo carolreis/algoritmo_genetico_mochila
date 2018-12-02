@@ -1,5 +1,7 @@
 <?php 
+
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once("functions/functions.php");
@@ -103,4 +105,3 @@ for ($i=0; $i < count($espacos); $i++) {
 }
 
 echo (json_encode($r));
-
