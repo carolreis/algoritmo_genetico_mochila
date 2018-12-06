@@ -93,8 +93,8 @@ class AlgoritmoGenetico {
 				// Filhos = Individuo1 -> crossover (Individuo2);
 				$filhos = $this->populacao[$pai1]->crossover($this->populacao[$pai2]);
 
-				$nova_populacao[] = $filhos[0]->mutacao($taxa_mutacao);
-				$nova_populacao[] = $filhos[1]->mutacao($taxa_mutacao);
+				$nova_populacao[] = $filhos[0]->mutacao($params['taxa_mutacao'], $params['bits_mutacao']);
+				$nova_populacao[] = $filhos[1]->mutacao($params['taxa_mutacao'], $params['bits_mutacao']);
 			}
 
 			$this->populacao = $nova_populacao;
@@ -108,7 +108,6 @@ class AlgoritmoGenetico {
 			$this->soma_avaliacoes();
 
 	    }
-
 	    return $this->melhor_solucao->cromossomo;
 	}
 

@@ -2,6 +2,12 @@
 function random() {
 	return mt_rand() / mt_getrandmax();
 }
+
+function frand($min, $max, $decimals = 2) {
+  $scale = pow(10, $decimals);
+  return mt_rand($min * $scale, $max * $scale) / $scale;
+}
+
 	
 function quick_sort($arr) {
 	$length = count($arr);

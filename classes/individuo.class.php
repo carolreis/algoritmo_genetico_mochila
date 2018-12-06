@@ -65,6 +65,7 @@ class Individuo {
 
 				) {
 					$nota += $this->valores[$i];
+					// echo "espacos: " . $this->espacos[$i] . "\n";
 					$soma_espacos += $this->espacos[$i];
 				}
 			}
@@ -73,7 +74,7 @@ class Individuo {
 		if ($soma_espacos > $this->peso_maximo) {
 			$nota = 1;			
 		}
-
+		
 		$this->nota_avaliacao = $nota;
 		$this->espaco_usado = $soma_espacos;
 	}
@@ -112,13 +113,15 @@ class Individuo {
 		return $filhos;
 	}
 
-	function mutacao($taxa_mutacao) {
+	function mutacao($taxa_mutacao, $bits_mutacao) {
 		for ($i = 0; $i < count($this->cromossomo); $i++) {
 			if (random() < $taxa_mutacao) {
-				if ($this->cromossomo[$i] == 1) {
-					$this->cromossomo[$i] = 0;
-				} else {
-					$this->cromossomo[$i] = 1;
+				if ($i <= $bits_mutacao) {  // Altera só alguns
+					if ($this->cromossomo[$i] == 1) {
+						$this->cromossomo[$i] = 0;
+					} else {
+						$this->cromossomo[$i] = 1;
+					}
 				}
 			}
 		}
